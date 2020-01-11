@@ -1,0 +1,43 @@
+{
+  "variables": {
+    "var_account_file": "{{ env `KEY_JSON` }}",
+    "var_project_id": "{{ env `PROJECT` }}",
+    "var_zone": "{{ env `ZONE` }}",
+    "var_ssh_username": "{{env 'USER' }}",
+    "image_description": "packer-image",
+    "machine_type": "n1-standard-1",
+    "source_image_family": "ubuntu-1804-lts"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "ssh_username": "{{ user `var_ssh_username` }}",
+      "project_id": "{{ user `var_project_id` }}",
+      "image": "{{ user `source_image_family` }}",
+      "size": "{{ user `machine_type`}}",
+      "zone": "{{ user `var_zone` }}",
+      "image_description": "{{ user `image_description` }}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/ansible.sh"
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "../ansible/site.yml",
+      "role_paths": [
+        "../ansible/roles/git",
+        "../ansible/roles/mysql",
+        "../ansible/roles/nginx",
+        "../ansible/roles/growlerfriday"
+      ],
+      "group_vars": "../ansible/group_vars"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/cleanup.sh"
+    }
+  ]
+}
