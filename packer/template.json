@@ -3,7 +3,7 @@
     "var_account_file": "{{ env `KEY_JSON` }}",
     "var_project_id": "{{ env `PROJECT` }}",
     "var_zone": "{{ env `ZONE` }}",
-    "var_ssh_username": "{{env 'USER' }}",
+    "var_ssh_username": "{{ env `USER` }}",
     "image_description": "packer-image",
     "machine_type": "n1-standard-1",
     "source_image_family": "ubuntu-1804-lts"
