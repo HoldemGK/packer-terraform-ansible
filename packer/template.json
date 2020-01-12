@@ -5,7 +5,7 @@
     "var_zone": "{{ env `ZONE` }}",
     "var_ssh_username": "{{ env `USER` }}",
     "image_description": "packer-image",
-    "machine_type": "n1-standard-1",
+    "size": "n1-standard-1",
     "source_image_family": "ubuntu-1804-lts"
   },
   "builders": [
@@ -14,7 +14,7 @@
       "ssh_username": "{{ user `var_ssh_username` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `source_image_family` }}",
-      "size": "{{ user `machine_type`}}",
+      "machine_type": "{{ user `size` }}",
       "zone": "{{ user `var_zone` }}",
       "image_description": "{{ user `image_description` }}"
     }
