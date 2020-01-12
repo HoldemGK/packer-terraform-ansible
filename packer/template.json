@@ -13,7 +13,7 @@
       "type": "googlecompute",
       "ssh_username": "{{ user `var_ssh_username` }}",
       "project_id": "{{ user `var_project_id` }}",
-      "image": "{{ user `source_image_family` }}",
+      "source_image": "{{ user `source_image_family` }}",
       "size": "{{ user `machine_type`}}",
       "zone": "{{ user `var_zone` }}",
       "image_description": "{{ user `image_description` }}"
