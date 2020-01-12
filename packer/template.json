@@ -6,7 +6,7 @@
     "var_ssh_username": "{{ env `USER` }}",
     "image_description": "packer-image",
     "size": "n1-standard-1",
-    "source_image_family": "ubuntu-1804-lts"
+    "source_image_family": "ubuntu-1804-bionic-v20191113"
   },
   "builders": [
     {
