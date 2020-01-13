@@ -1,5 +1,5 @@
 include .env
-export $(shell sed 's/=.*//')
+export $(shell sed 's/=.*//' .env)
 
 terraform-init:
 	cd terraform && terraform init && cd -
