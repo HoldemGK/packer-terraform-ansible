@@ -1,22 +1,23 @@
 {
   "variables": {
-    "var_account_file": "{{ env `KEY_JSON` }}",
+    "var_key_json": "{{ env `KEY_JSON` }}",
     "var_project_id": "{{ env `PROJECT` }}",
     "var_zone": "{{ env `ZONE` }}",
     "var_ssh_username": "{{ env `USER` }}",
     "var_image": "{{ env `IMAGE_PACKER` }}",
-    "image_description": "packer-image",
-    "size": "n1-standard-1"
+    "var_image_description": "{{ env `IMAGE_DESCR` }}",
+    "var_size": "{{ env `MACHINE_TYPE` }}"
   },
   "builders": [
     {
       "type": "googlecompute",
+      "account_file": "{{ user `var_key_json` }}",
       "ssh_username": "{{ user `var_ssh_username` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `var_image` }}",
-      "machine_type": "{{ user `size` }}",
+      "machine_type": "{{ user `var_size` }}",
       "zone": "{{ user `var_zone` }}",
-      "image_description": "{{ user `image_description` }}"
+      "image_description": "{{ user `var_image_description` }}"
     }
   ],
   "provisioners": [
