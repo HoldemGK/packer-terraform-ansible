@@ -6,7 +6,8 @@
     "var_ssh_username": "{{ env `USER` }}",
     "var_image": "{{ env `IMAGE_PACKER` }}",
     "var_image_description": "{{ env `IMAGE_DESCR` }}",
-    "var_size": "{{ env `MACHINE_TYPE` }}"
+    "var_size": "{{ env `MACHINE_TYPE` }}",
+    "var_ansible_script": "{{ env `ANSIBLE_SCRIPT_PATH` }}"
   },
   "builders": [
     {
@@ -17,14 +18,11 @@
       "source_image": "{{ user `var_image` }}",
       "machine_type": "{{ user `var_size` }}",
       "zone": "{{ user `var_zone` }}",
-      "image_description": "{{ user `var_image_description` }}"
+      "image_description": "{{ user `var_image_description` }}",
+      "startup_script_file": "{{ user `var_ansible_script` }}"
     }
   ],
   "provisioners": [
-    {
-      "type": "shell",
-      "script": "scripts/ansible.sh"
-    },
     {
       "type": "ansible-local",
       "playbook_file": "../ansible/site.yml",

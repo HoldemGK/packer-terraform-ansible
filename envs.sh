@@ -4,6 +4,7 @@ export KEY_JSON=/home/keys/key-packer.json
 export ZONE=us-east1-b
 export MACHINE_TYPE=n1-standard-1
 export IMAGE_DESCR=packer-image
+export ANSIBLE_SCRIPT_PATH=scripts/ansible.sh
 # USER in GCP created automatic
 
 export PROJECT=$(gcloud info --format='value(config.project)')
