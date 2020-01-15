@@ -31,8 +31,7 @@
         "../ansible/roles/nginx",
         "../ansible/roles/growlerfriday"
       ],
-      "group_vars": "../ansible/group_vars",
-      "extra_arguments": [ "-vvvv" ]
+      "group_vars": "../ansible/group_vars"
     },
     {
       "type": "shell",
