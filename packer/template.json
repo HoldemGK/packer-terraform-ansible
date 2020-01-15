@@ -24,7 +24,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "scripts/call_ansible.sh",
+      "script": "scripts/call_ansible.sh"
     },
     {
       "type": "ansible-local",
