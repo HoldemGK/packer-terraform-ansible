@@ -2,6 +2,7 @@
   "variables": {
     "var_key_json": "{{ env `KEY_JSON` }}",
     "var_project_id": "{{ env `PROJECT` }}",
+    "var_ssh_username": "{{ env `USER` }}",
     "var_zone": "{{ env `ZONE` }}",
     "var_image": "{{ env `IMAGE_PACKER` }}",
     "var_image_description": "{{ env `IMAGE_DESCR` }}",
@@ -14,7 +15,7 @@
       "account_file": "{{ user `var_key_json` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `var_image` }}",
-      "ssh_username": "packer",
+      "ssh_username": "{{ user `var_ssh_username` }}",
       "machine_type": "{{ user `var_size` }}",
       "zone": "{{ user `var_zone` }}",
       "image_description": "{{ user `var_image_description` }}",
