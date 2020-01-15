@@ -23,7 +23,7 @@
   ],
   "provisioners": [
     {
-      "type": "ansible-local",
+      "type": "ansible",
       "playbook_file": "../ansible/site.yml",
       "role_paths": [
         "../ansible/roles/git",
