@@ -4,6 +4,7 @@
     "var_project_id": "{{ env `PROJECT` }}",
     "var_zone": "{{ env `ZONE` }}",
     "var_ssh_username": "{{ env `USER` }}",
+    "var_ssh_usernamep": "packer",
     "var_image": "{{ env `IMAGE_PACKER` }}",
     "var_image_description": "{{ env `IMAGE_DESCR` }}",
     "var_size": "{{ env `MACHINE_TYPE` }}",
@@ -13,7 +14,7 @@
     {
       "type": "googlecompute",
       "account_file": "{{ user `var_key_json` }}",
-      "ssh_username": "{{ user `var_ssh_username` }}",
+      "ssh_username": "{{ user `var_ssh_usernamep` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `var_image` }}",
       "machine_type": "{{ user `var_size` }}",
