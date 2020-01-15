@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/bash
 
 # Install Ansible repository.
 apt -y update && apt-get -y upgrade
