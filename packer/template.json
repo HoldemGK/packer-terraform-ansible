@@ -11,10 +11,10 @@
   "builders": [
     {
       "type": "googlecompute",
-      "ssh_username": "packer",
       "account_file": "{{ user `var_key_json` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `var_image` }}",
+      "ssh_username": "packer",
       "machine_type": "{{ user `var_size` }}",
       "zone": "{{ user `var_zone` }}",
       "image_description": "{{ user `var_image_description` }}",
