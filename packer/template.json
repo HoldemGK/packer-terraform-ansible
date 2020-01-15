@@ -23,8 +23,9 @@
   ],
   "provisioners": [
     {
+      "type": "shell",
+      "script": "scripts/call_ansible.sh",
       "type": "ansible-local",
-      "command": "scripts/call_ansible.sh",
       "playbook_file": "../ansible/site.yml",
       "role_paths": [
         "../ansible/roles/git",
