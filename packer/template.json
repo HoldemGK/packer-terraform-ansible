@@ -16,12 +16,7 @@
       "source_image": "{{ user `var_image` }}",
       "machine_type": "{{ user `var_size` }}",
       "zone": "{{ user `var_zone` }}",
-      "image_description": "{{ user `var_image_description` }}",
-      "scopes": [
-                "https://www.googleapis.com/auth/userinfo.email",
-                "https://www.googleapis.com/auth/compute",
-                "https://www.googleapis.com/auth/devstorage.full_control"
-            ]
+      "image_description": "{{ user `var_image_description` }}"
     }
   ],
   "provisioners": [
