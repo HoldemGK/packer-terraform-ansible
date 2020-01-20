@@ -28,3 +28,5 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 #"var_ssh_username": "{{ env `USER` }}"
+#"var_ansible_script": "{{ env `ANSIBLE_SCRIPT_PATH` }}"
+#"startup_script_file": "{{ user `var_ansible_script` }}"
