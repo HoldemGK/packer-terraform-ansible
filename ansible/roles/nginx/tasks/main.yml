@@ -6,4 +6,4 @@
   file: name=/etc/nginx/sites-enabled/default state=absent
 
 - name: Install system nginx config
- template: src=templates/nginx.conf dest=/etc/nginx/nginx.conf
+  template: src=templates/nginx.conf dest=/etc/nginx/nginx.conf
