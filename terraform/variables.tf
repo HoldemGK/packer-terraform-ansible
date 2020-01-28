@@ -23,3 +23,7 @@ variable "machine_type" {
 variable "boot_image" {
   description = "Image created of Packer"
 }
+
+variable "region" {
+  description = "In this example us-east1"
+}
