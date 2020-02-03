@@ -11,6 +11,7 @@
     {
       "type": "googlecompute",
       "ssh_username": "packer",
+      "image_family": "packer-family",
       "account_file": "{{ user `var_key_json` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `var_image` }}",
