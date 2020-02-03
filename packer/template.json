@@ -4,6 +4,7 @@
     "var_project_id": "{{ env `PROJECT` }}",
     "var_zone": "{{ env `ZONE` }}",
     "var_image": "{{ env `IMAGE_PACKER` }}",
+    "var_family": "{{ env `IMAGE_FAMILY` }}",
     "var_image_description": "{{ env `IMAGE_DESCR` }}",
     "var_size": "{{ env `MACHINE_TYPE` }}"
   },
@@ -11,7 +12,7 @@
     {
       "type": "googlecompute",
       "ssh_username": "packer",
-      "image_family": "packer-family",
+      "image_family": "{{ user `var_family` }}",
       "account_file": "{{ user `var_key_json` }}",
       "project_id": "{{ user `var_project_id` }}",
       "source_image": "{{ user `var_image` }}",

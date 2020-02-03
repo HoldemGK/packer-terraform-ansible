@@ -5,6 +5,7 @@ export REGION=us-east1
 export ZONE=us-east1-b
 export MACHINE_TYPE=n1-standard-1
 export IMAGE_DESCR=packer-image
+export IMAGE_FAMILY=packer-family
 export SERVER_NAME=staging
 # USER in GCP created automatic
 export PROJECT=$(gcloud info --format='value(config.project)')
@@ -17,4 +18,4 @@ export TF_VAR_region=${REGION}
 export TF_VAR_zone=${ZONE}
 export TF_VAR_machine_type=${MACHINE_TYPE}
 export TF_VAR_project=${PROJECT}
-export TF_VAR_boot_image=${IMAGE_PACKER}
+export TF_VAR_boot_image=$(gcloud compute images list --format="value(NAME)" --filter="family=packer-family")
