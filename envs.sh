@@ -9,7 +9,7 @@ export IMAGE_FAMILY=packer-family
 export SERVER_NAME=staging
 # USER in GCP created automatic
 export PROJECT=$(gcloud info --format='value(config.project)')
-export IMAGE_PACKER=$(gcloud compute images list --format="value(NAME)" --filter="family=ubuntu-1804-lts")
+export IMAGE_SOURCE=$(gcloud compute images list --format="value(NAME)" --filter="family=ubuntu-1804-lts")
 
 # TERRAFORM SPECIFIC ENV VARS - EQUAL TO THE ONES ABOVE, JUST NAMED DIFFERENTLY
 export TF_VAR_key=${KEY_JSON}
