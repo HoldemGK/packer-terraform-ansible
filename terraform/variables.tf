@@ -20,8 +20,8 @@ variable "machine_type" {
   description = "Type of instance"
 }
 
-variable "boot_image" {
-  description = "Image created of Packer"
+variable "image_family" {
+  description = "GCP image family"
 }
 
 variable "region" {

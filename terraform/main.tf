@@ -4,13 +4,17 @@ provider "google" {
   region      = var.region
 }
 
-data "google_compute_instance" "staging" {
+data "google_compute_image" "boot_image" {
+  family = var.image_family
+}
+
+resource "google_compute_instance" "staging" {
   name = var.server_name
   zone = var.zone
   machine_type = var.machine_type
   boot_disk {
     initialize_params {
-      image = var.boot_image
+      image = data.google_compute_image.boot_image.self_link
     }
   }
 
