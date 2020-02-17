@@ -39,6 +39,6 @@ spec:
   - http:
     paths:
     - backend:
-        serviceName: app
+        serviceName: my-service
         servicePort: 80
       path: /
