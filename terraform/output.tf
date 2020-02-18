@@ -1,5 +1,5 @@
 output "ip" {
-  value = "${google_compute_instance.staging.network_interface.0.nat_ip}"
+  value = "${google_compute_instance.staging.network_interface.0.network}"
 }
 
 #output "boot_image" {
