@@ -3,7 +3,7 @@ output "ip" {
 }
 
 output "boot_image" {
-  value = [google_compute_instance.staging.boot_disk.initialize_params.image]
+  value = google_compute_instance.staging.boot_disk[initialize_params.image]
 }
 
 output "instance_id" {
