@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export KEY_JSON=/home/keys/key-packer.json
+export KEY_JSON=/home/keys/key.json
 export REGION=us-east1
 export ZONE=us-east1-b
 export MACHINE_TYPE=n1-standard-1
