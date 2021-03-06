@@ -2,7 +2,7 @@ create-key:
 	[ -d /home/keys ] || mkdir /home/keys
 	gcloud iam service-accounts create terraform \
 	   --display-name "Terraform admin account" \
-		 --project ${PROJECT} && gcloud projects add-iam-policy-binding ${PROJECT} \
+		 --project=${PROJECT} && gcloud projects add-iam-policy-binding ${PROJECT} \
 	   --member serviceAccount:terraform@${PROJECT}.iam.gserviceaccount.com \
 	   --role roles/editor
 	gcloud iam service-accounts keys create /home/keys/key.json \
