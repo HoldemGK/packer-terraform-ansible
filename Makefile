@@ -1,5 +1,5 @@
 create-key:
-	mkdir /home/keys
+	[ -d /home/keys ] || mkdir /home/keys
 	gcloud iam service-accounts create terraform \
 	   --display-name "Terraform admin account"
 	gcloud projects add-iam-policy-binding ${PROJECT} \
