@@ -7,6 +7,16 @@ export MACHINE_TYPE=n1-standard-1
 export IMAGE_DESCR=packer-image
 export IMAGE_FAMILY=packer-family
 export SERVER_NAME=staging
+
+# Call the function statusCheck to validate the environment
+statusCheck "$KEY_JSON" "KEY_JSON"
+statusCheck "$REGION" "REGION"
+statusCheck "$ZONE" "ZONE"
+statusCheck "$MACHINE_TYPE" "MACHINE_TYPE"
+statusCheck "$IMAGE_DESCR" "IMAGE_DESCR"
+statusCheck "$IMAGE_FAMILY" "IMAGE_FAMILY"
+statusCheck "$SERVER_NAME" "SERVER_NAME"
+
 # USER in GCP created automatic
 export PROJECT=$(gcloud info --format='value(config.project)')
 export IMAGE_SOURCE=$(gcloud compute images list --format="value(NAME)" --filter="family=ubuntu-1804-lts")
